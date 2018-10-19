@@ -1,0 +1,8 @@
+*.swp
+*.swo
+TF_VAR_export.sh
+.terraform
+terraform.tfstate.d
+*_override.tf
+key_pair
+key_pair.pub
