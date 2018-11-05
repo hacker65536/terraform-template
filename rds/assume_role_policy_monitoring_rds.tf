@@ -1,0 +1,1 @@
+../_common/assume_role_policy_monitoring_rds.tf

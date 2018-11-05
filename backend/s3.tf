@@ -5,13 +5,13 @@ resource "aws_s3_bucket" "state" {
 
   force_destroy = true
 
-  # remove comment and apply when you want to do destroy  
+  # comment out force_destroy if you want to leave data
 
   versioning {
     enabled = true
   }
 }
 
-output "bucketname" {
+output "bucket" {
   value = "${aws_s3_bucket.state.id}"
 }

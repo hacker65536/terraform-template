@@ -1,0 +1,10 @@
+[
+  {
+    "name": "first",
+    "image": "${image}",
+    "cpu": 10,
+    "memory": 512,
+    "command": ["--slave", "--master-host=${master}"],
+    "essential": true
+  }
+]

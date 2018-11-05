@@ -6,3 +6,5 @@ terraform.tfstate.d
 *_override.tf
 key_pair
 key_pair.pub
+terraform.log
+errored.tfstate

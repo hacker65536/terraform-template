@@ -12,3 +12,7 @@ resource "aws_dynamodb_table" "dynamo" {
 
   tags = "${local.tags}"
 }
+
+output "dynamodb_table" {
+  value = "${aws_dynamodb_table.dynamo.id}"
+}
