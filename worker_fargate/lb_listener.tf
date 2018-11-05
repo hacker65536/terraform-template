@@ -1,5 +1,5 @@
-resource "aws_alb_listener" "http" {
-  load_balancer_arn = "${aws_alb.alb.arn}"
+resource "aws_lb_listener" "http" {
+  load_balancer_arn = "${aws_lb.lb.arn}"
   port              = "80"
   protocol          = "HTTP"
 

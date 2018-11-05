@@ -15,5 +15,6 @@ resource "aws_lb_target_group" "target" {
     matcher             = 200
   }
 
-  tags = "${local.tags}"
+  tags       = "${local.tags}"
+  depends_on = ["aws_lb.lb"]
 }

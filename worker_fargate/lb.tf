@@ -1,5 +1,7 @@
-resource "aws_alb" "alb" {
+resource "aws_lb" "lb" {
   name = "${terraform.workspace}-alb"
+
+  load_balancer_type = "application"
 
   security_groups = [
     "${data.aws_security_group.sec.id}",

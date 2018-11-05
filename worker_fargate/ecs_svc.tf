@@ -26,5 +26,9 @@ resource "aws_ecs_service" "nginx" {
   }
 	*/
 
-  depends_on = ["aws_alb_listener.http"]
+  depends_on = [
+    "aws_lb_listener.http",
+    "aws_lb.lb",
+    "aws_lb_target_group.target.",
+  ]
 }
