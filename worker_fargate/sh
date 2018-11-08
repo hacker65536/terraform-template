@@ -1,0 +1,13 @@
+#!/bin/env bash
+
+ecr_name=$(terraform output ecr_name)
+ecr_url=$(terraform output ecr_url)
+
+$(aws ecr get-login --no-include-email --region us-west-2)
+docker build -t ${ecr_name}-nginx ./app/nginx
+docker tag ${ecr_name}-nginx  ${ecr_url}:nginx
+docker push ${ecr_url}:nginx
+
+docker build -t ${ecr_name}-fpm ./app/fpm
+docker tag ${ecr_name}-fpm  ${ecr_url}:fpm
+docker push ${ecr_url}:fpm

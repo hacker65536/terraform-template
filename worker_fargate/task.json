@@ -1,17 +1,57 @@
 [
   {
-    "name": "nginx",
-    "image": "${image}:latest",
+    "name": "phpfpm",
+    "image": "${fpm_image}",
     "cpu": 256,
-    "memory": 512,
+    "memory": 256,
+    "essential": true,
+    "requiresCompatibilities": [
+      "FARGATE"
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "${log_fpm}",
+        "awslogs-region": "us-west-2",
+        "awslogs-stream-prefix": "fpm"
+      }
+    }
+  },
+  {
+    "name": "nginx",
+    "image": "${nginx_image}",
+    "cpu": 256,
+    "memory": 256,
     "essential": true,
     "portMappings": [
       {
         "containerPort": 80
       }
     ],
+    "environment": [
+      {
+        "name": "PHP_FPM_SOCK",
+        "value": "localhost:9000"
+      }
+    ],
     "requiresCompatibilities": [
       "FARGATE"
-    ]
+    ],
+    "link": [
+      "phpfpm"
+    ],
+    "volumesFrom": [
+      {
+        "sourceContainer": "phpfpm"
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "${log_nginx}",
+        "awslogs-region": "us-west-2",
+        "awslogs-stream-prefix": "nginx"
+      }
+    }
   }
 ]

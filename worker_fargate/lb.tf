@@ -4,7 +4,8 @@ resource "aws_lb" "lb" {
   load_balancer_type = "application"
 
   security_groups = [
-    "${data.aws_security_groups.httphttps.ids}",
+    //    "${data.aws_security_groups.httphttps.ids}",
+    "${data.aws_security_group.sec.id}",
   ]
 
   subnets = ["${data.aws_subnet_ids.pub.ids}"]

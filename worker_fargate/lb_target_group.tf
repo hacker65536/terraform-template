@@ -7,7 +7,7 @@ resource "aws_lb_target_group" "target" {
   vpc_id = "${data.aws_vpc.vpc.id}"
 
   health_check {
-    path                = "/"
+    path                = "/index.php"
     healthy_threshold   = 2
     unhealthy_threshold = 2
     interval            = 10

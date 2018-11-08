@@ -2,7 +2,7 @@ resource "aws_ecs_service" "nginx" {
   name            = "nginx"
   cluster         = "${aws_ecs_cluster.ecs.id}"
   task_definition = "${aws_ecs_task_definition.task.arn}"
-  desired_count   = 3
+  desired_count   = 1
   depends_on      = ["aws_iam_role.ecssvc"]
 
   launch_type = "FARGATE"
