@@ -33,6 +33,7 @@ resource "aws_route_table" "pri_nat" {
 }
 
 resource "aws_route" "pri_nat" {
+  count                  = "${var.nat==0? 0 : 1}"
   route_table_id         = "${aws_route_table.pri_nat.id}"
   destination_cidr_block = "0.0.0.0/0"
   nat_gateway_id         = "${aws_nat_gateway.nat.id}"

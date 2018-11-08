@@ -1,3 +1,3 @@
 locals {
-  db_class = "db.t2.medium"
+  db_class = "db.r4.2xlarge"
 }

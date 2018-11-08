@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "2.2",
+  "description": "sysbench",
+  "parameters": {
+    "user": {
+      "description": "dbuser",
+      "type": "String",
+      "default": "sbtest"
+    },
+    "pass": {
+      "description": "dbpassword",
+      "type": "String",
+      "default": "foobarbaz"
+    },
+    "host": {
+      "description": "dbhost",
+      "type": "String",
+      "default": ""
+    },
+    "schema": {
+      "description": "dbname",
+      "type": "String",
+      "default": "sbtest"
+    },
+    "threads": {
+      "description": "threads",
+      "type": "String",
+      "default": "1"
+    },
+    "time": {
+      "description": "time",
+      "type": "String",
+      "default": "10"
+    },
+    "testname": {
+      "description": "testname",
+      "type": "String",
+      "default": "/usr/local/share/sysbench/oltp_read_write.lua"
+    },
+    "command": {
+      "description": "command",
+      "type": "String",
+      "default": "run"
+    }
+  },
+  "mainSteps": [
+    {
+      "action": "aws:runShellScript",
+      "name": "sysbench",
+      "precondition": {
+        "StringEquals": [
+          "platformType",
+          "Linux"
+        ]
+      },
+      "inputs": {
+        "runCommand": [
+          "sysbench --db-driver=mysql --mysql-host={{host}} --mysql-user={{user}} --mysql-password={{pass} --mysql-db={{schema}} --threads={{threads}} --time={{time}} {{testname}} {{command}}" 
+        ],
+        "workingDirectory": "/root"
+      }
+    }
+  ]
+}

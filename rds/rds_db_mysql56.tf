@@ -1,20 +1,20 @@
 locals {
-  mysqlengines = [
-    "5.6.39",
+  mysql56engines = [
+    "5.6.41",
   ]
 }
 
 resource "aws_db_instance" "mysql56" {
-  count      = "${length(local.mysqlengines)}"
-  identifier = "${terraform.workspace}-mysql${replace(element(local.mysqlengines,count.index),".","")}"
+  count      = "${length(local.mysql56engines)}"
+  identifier = "${terraform.workspace}-mysql${replace(element(local.mysql56engines,count.index),".","")}"
 
   allocated_storage = "${local.storage}"
   storage_type      = "gp2"
 
   engine               = "mysql"
-  engine_version       = "${element(local.mysqlengines,count.index)}"
+  engine_version       = "${element(local.mysql56engines,count.index)}"
   instance_class       = "${local.db_class}"
-  name                 = "mydb"
+  name                 = "${local.db_name}"
   username             = "${local.rds_sec["username"]}"
   password             = "${local.rds_sec["password"]}"
   parameter_group_name = "${aws_db_parameter_group.mysql56.id}"
@@ -33,7 +33,7 @@ resource "aws_db_instance" "mysql56" {
     "slowquery",
   ]
 
-  tags = "${merge(local.tags, map("Name", "${terraform.workspace}-mysql${replace(element(local.mysqlengines,count.index),".","")}"))}"
+  tags = "${merge(local.tags, map("Name", "${terraform.workspace}-mysql${replace(element(local.mysql56engines,count.index),".","")}"))}"
 }
 
 resource "aws_db_parameter_group" "mysql56" {
