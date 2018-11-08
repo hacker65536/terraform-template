@@ -1,1 +1,0 @@
-../_common/data_sg.tf
