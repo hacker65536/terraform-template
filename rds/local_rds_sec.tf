@@ -1,6 +1,6 @@
 locals {
   rds_sec = {
-    username = "foo"
+    username = "sbtest"
     password = "foobarbaz"
   }
 }

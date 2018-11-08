@@ -1,6 +1,7 @@
 resource "aws_secretsmanager_secret" "sec" {
-  name        = "${terraform.workspace}-rds-sec"
+  name_prefix = "${terraform.workspace}-rds-sec"
   description = "rds-sec"
+  tags        = "${local.tags}"
 }
 
 resource "aws_secretsmanager_secret_version" "sec" {

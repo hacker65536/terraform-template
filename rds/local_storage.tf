@@ -1,3 +1,3 @@
 locals {
-  storage = 10
+  storage = 1000
 }
