@@ -6,7 +6,7 @@ provider "aws" {
   region  = "${var.region}"
   profile = "${var.profile}"
 
-  version = "~> 1.41.0"
+  version = "~> 1.42.0"
 }
 
 provider "template" {
