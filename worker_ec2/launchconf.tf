@@ -7,10 +7,6 @@ data "template_file" "user_data_ec2" {
   }
 }
 
-locals {
-  ec2_instance_type = "c5.xlarge"
-}
-
 resource "aws_launch_configuration" "ec2_node" {
   associate_public_ip_address = true
   iam_instance_profile        = "${aws_iam_instance_profile.ec2.name}"
