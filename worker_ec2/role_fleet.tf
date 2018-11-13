@@ -1,5 +1,5 @@
 resource "aws_iam_role" "fleet" {
-  name               = "${terraform.workspace}-ecsSpotFleetRole"
+  name               = "${terraform.workspace}-SpotFleetRole"
   assume_role_policy = "${data.aws_iam_policy_document.assume_role_policy_spotfleet.json}"
 }
 

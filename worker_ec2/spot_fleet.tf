@@ -1,12 +1,24 @@
 locals {
   spot_price {
-    c5.xlarge = "0.4"
+    c5.large  = "0.1"
+    c5.xlarge = "0.3"
+    t2.micro  = "0.01"
+    t2.medium = "0.02"
   }
+}
+
+locals {
+  rdss = "${length(data.terraform_remote_state.rds.mysql_addresses)}"
+  azs  = "${length(data.aws_availability_zones.azs.names)}"
+}
+
+output "rdss" {
+  value = "${data.terraform_remote_state.rds.mysql_addresses}"
 }
 
 # Request a Spot fleet
 resource "aws_spot_fleet_request" "cheap_compute" {
-  count          = 3
+  count          = "${local.rdss * local.azs}"
   iam_fleet_role = "${aws_iam_role.fleet.arn}"
 
   //  spot_price          = "0.5"
@@ -29,11 +41,11 @@ resource "aws_spot_fleet_request" "cheap_compute" {
     spot_price               = "${local.spot_price["${local.ec2_instance_type}"]}"
     iam_instance_profile_arn = "${aws_iam_instance_profile.ec2.arn}"
     user_data                = "${base64encode(data.template_file.user_data_ec2.rendered)}"
-    subnet_id                = "${data.aws_subnet_ids.pub.ids[count.index]}"
+    subnet_id                = "${data.aws_subnet_ids.pub.ids[count.index % local.azs]}"
     vpc_security_group_ids   = ["${data.aws_security_group.sec.id}"]
     weighted_capacity        = 1
 
-    tags = "${merge(local.tags, map("Name", "${terraform.workspace}-ec2node-sf","Asggroup",count.index))}"
+    tags = "${merge(local.tags, map("Name", "${terraform.workspace}-ec2node-sf","groupName","${terraform.workspace}-sf-${count.index / local.rdss}"))}"
   }
 
   /*
