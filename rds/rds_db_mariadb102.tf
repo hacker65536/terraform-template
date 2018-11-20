@@ -30,7 +30,7 @@ resource "aws_db_instance" "mariadb102" {
   backup_retention_period = 1
 
   enabled_cloudwatch_logs_exports = [
-    "slowquery",
+    "${local.cloudwatch_logs_exports}",
   ]
 
   tags = "${merge(local.tags, map("Name", "${terraform.workspace}-mariadb${replace(element(local.mariadb102engines,count.index),".","")}"))}"
@@ -40,6 +40,12 @@ resource "aws_db_parameter_group" "mariadb102" {
   name   = "${terraform.workspace}-mariadb102-parameter-group"
   family = "mariadb10.2"
   tags   = "${local.tags}"
+}
+
+resource "aws_db_option_group" "mariadb102" {
+  name                 = "${terraform.workspace}-mariadb102-option-group"
+  engine_name          = "mariadb"
+  major_engine_version = "10.2"
 }
 
 output "mariadb102_endpoints" {

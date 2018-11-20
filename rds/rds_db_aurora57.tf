@@ -7,6 +7,7 @@ locals {
 resource "aws_rds_cluster" "aurora57" {
   cluster_identifier     = "${terraform.workspace}-aurora${replace(element(local.aurora57engines,count.index),".","")}"
   engine                 = "aurora-mysql"
+  engine_mode            = "provisioned"
   database_name          = "${local.db_name}"
   master_username        = "${local.rds_sec["username"]}"
   master_password        = "${local.rds_sec["password"]}"
@@ -15,9 +16,10 @@ resource "aws_rds_cluster" "aurora57" {
 
   db_cluster_parameter_group_name = "${aws_rds_cluster_parameter_group.aurora57.id}"
   skip_final_snapshot             = true
+  apply_immediately               = true
 
   enabled_cloudwatch_logs_exports = [
-    "slowquery",
+    "${local.cloudwatch_logs_exports}",
   ]
 
   tags = "${merge(local.tags, map("Name", "${terraform.workspace}-aurora${replace(element(local.aurora57engines,count.index),".","")}"))}"
@@ -35,6 +37,7 @@ resource "aws_rds_cluster_instance" "aurora57" {
   instance_class          = "${local.db_class}"
   engine                  = "aurora-mysql"
   engine_version          = "${element(local.aurora57engines,count.index)}"
+  apply_immediately       = true
 
   tags = "${merge(local.tags, map("Name", "${terraform.workspace}-aurora${replace(element(local.aurora57engines,count.index),".","")}"))}"
 }
