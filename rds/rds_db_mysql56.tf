@@ -30,7 +30,7 @@ resource "aws_db_instance" "mysql56" {
   backup_retention_period = 1
 
   enabled_cloudwatch_logs_exports = [
-    "slowquery",
+    "${local.cloudwatch_logs_exports}",
   ]
 
   tags = "${merge(local.tags, map("Name", "${terraform.workspace}-mysql${replace(element(local.mysql56engines,count.index),".","")}"))}"
@@ -40,6 +40,32 @@ resource "aws_db_parameter_group" "mysql56" {
   name   = "${terraform.workspace}-mysql56-parameter-group"
   family = "mysql5.6"
   tags   = "${local.tags}"
+
+  parameter {
+    name  = "general_log"
+    value = "1"
+  }
+
+  parameter {
+    name  = "slow_query_log"
+    value = "1"
+  }
+
+  parameter {
+    name  = "long_query_time"
+    value = "0"
+  }
+
+  parameter {
+    name  = "log_output"
+    value = "FILE"
+  }
+}
+
+resource "aws_db_option_group" "mysql56" {
+  name                 = "${terraform.workspace}-mysql56-option-group"
+  engine_name          = "mysql"
+  major_engine_version = "5.6"
 }
 
 output "mysql56_endpoints" {

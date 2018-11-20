@@ -4,6 +4,7 @@ data "template_file" "user_data_ec2" {
   vars {
     //  ecs_cluster = "${aws_ecs_cluster.cluster.name}"
     password = "foobarbaz"
+    list     = "${join("\n",data.terraform_remote_state.rds.mysql_addresses)}"
   }
 }
 

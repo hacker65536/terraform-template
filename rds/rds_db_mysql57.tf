@@ -30,7 +30,7 @@ resource "aws_db_instance" "mysql57" {
   backup_retention_period = 1
 
   enabled_cloudwatch_logs_exports = [
-    "slowquery",
+    "${local.cloudwatch_logs_exports}",
   ]
 
   tags = "${merge(local.tags, map("Name", "${terraform.workspace}-mysql${replace(element(local.mysql57engines,count.index),".","")}"))}"
@@ -40,6 +40,12 @@ resource "aws_db_parameter_group" "mysql57" {
   name   = "${terraform.workspace}-mysql57-parameter-group"
   family = "mysql5.7"
   tags   = "${local.tags}"
+}
+
+resource "aws_db_option_group" "mysql57" {
+  name                 = "${terraform.workspace}-mysql57-option-group"
+  engine_name          = "mysql"
+  major_engine_version = "5.7"
 }
 
 output "mysql57_endpoints" {

@@ -35,27 +35,71 @@ db-driver=mysql
 mysql-password=${password}
 EOF
 
+
+cat <<'EOF' > comm
+tbls=10
+size=100000
+common="/usr/local/share/sysbench/oltp_common.lua"
+EOF
+
 cat <<'EOF' > prepare
 #!/bin/env bash
+
+. ./comm
 
 sysbench \
 --config-file=config \
 --mysql-host=$1 \
-/usr/local/share/sysbench/oltp_read_only.lua \
+--tables=$tbls \
+--table-size=$size \
+$${2:-$${common}} \
+cleanup
+
+sysbench \
+--config-file=config \
+--mysql-host=$1 \
+--tables=$tbls \
+--table-size=$size \
+$${2:-$${common}} \
 prepare
 EOF
 
 cat <<'EOF' > bench
 #!/bin/env bash
 
+. ./comm
+
 sysbench \
 --config-file=config \
 --mysql-host=$1 \
-/usr/local/share/sysbench/oltp_read_write.lua \
+--tables=$tbls \
+--table-size=$size \
+$2 \
 run
 EOF
 
 cat <<'EOF' > list
 ${list}
 EOF
-#chown -R ec2-user:ec2-user /home/ec2-user/
+
+cat <<'EOF' > cleanup
+#!/bin/env bash
+
+. ./comm
+
+sysbench \
+--config-file=config \
+--mysql-host=$1 \
+--tables=$tbls \
+--table-size=$size \
+$${2:-$${common}} \
+cleanup
+EOF
+
+cat <<'EOF' > showtable
+#!/bin/env bash
+
+mysql -h $1 -usbtest --password=${password} sbtest -e 'select @@version' 2>/dev/null
+mysql -h $1 -usbtest --password=${password} sbtest -e 'show tables' 2>/dev/null
+mysql -h $1 -usbtest --password=${password} sbtest -e 'show create table sbtest1' 2>/dev/null
+EOF

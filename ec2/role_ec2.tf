@@ -1,5 +1,5 @@
 resource "aws_iam_role" "ec2" {
-  name               = "${terraform.workspace}-bastion"
+  name               = "${terraform.workspace}-ec2"
   assume_role_policy = "${data.aws_iam_policy_document.assume_role_policy_ec2.json}"
 }
 
@@ -7,10 +7,10 @@ locals {
   ec2_role_policies = [
     #for SSM
     "arn:aws:iam::aws:policy/service-role/AmazonEC2RoleforSSM",
-
-    #for ECS
-    "arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceforEC2Role",
   ]
+
+  #for ECS
+  //  "arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceforEC2Role",
 
   //   "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess",
 

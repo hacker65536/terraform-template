@@ -1,9 +1,10 @@
 locals {
   spot_price {
-    c5.large  = "0.1"
-    c5.xlarge = "0.3"
-    t2.micro  = "0.01"
-    t2.medium = "0.02"
+    c5.large   = "0.1"
+    c5.xlarge  = "0.3"
+    c5.2xlarge = "0.3"
+    t2.micro   = "0.01"
+    t2.medium  = "0.02"
   }
 }
 
@@ -45,7 +46,7 @@ resource "aws_spot_fleet_request" "cheap_compute" {
     vpc_security_group_ids   = ["${data.aws_security_group.sec.id}"]
     weighted_capacity        = 1
 
-    tags = "${merge(local.tags, map("Name", "${terraform.workspace}-ec2node-sf","groupName","${terraform.workspace}-sf-${count.index / local.rdss}"))}"
+    tags = "${merge(local.tags, map("Name", "${terraform.workspace}-ec2node-sf","groupName","${terraform.workspace}-sf-${count.index / local.azs}"))}"
   }
 
   /*

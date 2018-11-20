@@ -30,7 +30,7 @@ resource "aws_db_instance" "mysql80" {
   backup_retention_period = 1
 
   enabled_cloudwatch_logs_exports = [
-    "slowquery",
+    "${local.cloudwatch_logs_exports}",
   ]
 
   tags = "${merge(local.tags, map("Name", "${terraform.workspace}-mysql${replace(element(local.mysql80engines,count.index),".","")}"))}"
@@ -40,6 +40,12 @@ resource "aws_db_parameter_group" "mysql80" {
   name   = "${terraform.workspace}-mysql80-parameter-group"
   family = "mysql8.0"
   tags   = "${local.tags}"
+}
+
+resource "aws_db_option_group" "mysql80" {
+  name                 = "${terraform.workspace}-mysql80-option-group"
+  engine_name          = "mysql"
+  major_engine_version = "8.0"
 }
 
 output "mysql80_endpoints" {
