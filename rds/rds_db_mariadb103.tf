@@ -29,10 +29,13 @@ resource "aws_db_instance" "mariadb103" {
   monitoring_role_arn     = "${aws_iam_role.rds_enhanced_monitoring_role.arn}"
   backup_retention_period = 1
 
+  multi_az = false
+
+  //snapshot_identifier     = "${terraform.workspace}-mariadb${replace(element(local.mariadb103engines,count.index),".","")}-200-2000000"
+
   enabled_cloudwatch_logs_exports = [
     "${local.cloudwatch_logs_exports}",
   ]
-
   tags = "${merge(local.tags, map("Name", "${terraform.workspace}-mariadb${replace(element(local.mariadb103engines,count.index),".","")}"))}"
 }
 
@@ -40,6 +43,11 @@ resource "aws_db_parameter_group" "mariadb103" {
   name   = "${terraform.workspace}-mariadb103-parameter-group"
   family = "mariadb10.3"
   tags   = "${local.tags}"
+
+  parameter {
+    name  = "max_prepared_stmt_count"
+    value = "1048576"
+  }
 }
 
 resource "aws_db_option_group" "mariadb103" {

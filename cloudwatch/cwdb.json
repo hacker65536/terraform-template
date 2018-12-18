@@ -1,0 +1,1939 @@
+{
+    "widgets": [
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "ActiveTransactions",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "ActiveTransactions",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "ActiveTransactions",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-ActiveTransactions",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "AuroraBinlogReplicaLag",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "AuroraBinlogReplicaLag",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "AuroraBinlogReplicaLag",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-AuroraBinlogReplicaLag",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "AuroraReplicaLagMaximum",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "AuroraReplicaLagMaximum",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "AuroraReplicaLagMaximum",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-AuroraReplicaLagMaximum",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "BinLogDiskUsage",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "BinLogDiskUsage",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "BinLogDiskUsage",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-BinLogDiskUsage",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "BacktrackChangeRecordsCreationRate",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "BacktrackChangeRecordsCreationRate",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "BacktrackChangeRecordsCreationRate",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-BacktrackChangeRecordsCreationRate",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "BacktrackChangeRecordsStored",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "BacktrackChangeRecordsStored",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "BacktrackChangeRecordsStored",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-BacktrackChangeRecordsStored",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "BacktrackWindowActual",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "BacktrackWindowActual",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "BacktrackWindowActual",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-BacktrackWindowActual",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "BacktrackWindowAlert",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "BacktrackWindowAlert",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "BacktrackWindowAlert",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-BacktrackWindowAlert",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "BlockedTransactions",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "BlockedTransactions",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "BlockedTransactions",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-BlockedTransactions",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "CommitLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "CommitLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "CommitLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-CommitLatency",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "CommitThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "CommitThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "CommitThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-CommitThroughput",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "CPUCreditBalance",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "CPUCreditBalance",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "CPUCreditBalance",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-CPUCreditBalance",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "CPUCreditUsage",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "CPUCreditUsage",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "CPUCreditUsage",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-CPUCreditUsage",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "CPUUtilization",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "CPUUtilization",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "CPUUtilization",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-CPUUtilization",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "DatabaseConnections",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "DatabaseConnections",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "DatabaseConnections",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-DatabaseConnections",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "DDLLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "DDLLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "DDLLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-DDLLatency",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "DDLThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "DDLThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "DDLThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-DDLThroughput",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "Deadlocks",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "Deadlocks",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "Deadlocks",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-Deadlocks",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "DeleteLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "DeleteLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "DeleteLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-DeleteLatency",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "DeleteThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "DeleteThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "DeleteThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-DeleteThroughput",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "DMLLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "DMLLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "DMLLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-DMLLatency",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "DMLThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "DMLThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "DMLThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-DMLThroughput",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "EngineUptime",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "EngineUptime",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "EngineUptime",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-EngineUptime",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "FreeableMemory",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "FreeableMemory",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "FreeableMemory",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-FreeableMemory",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "FreeLocalStorage",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "FreeLocalStorage",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "FreeLocalStorage",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-FreeLocalStorage",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "InsertLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "InsertLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "InsertLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-InsertLatency",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "InsertThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "InsertThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "InsertThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-InsertThroughput",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "LoginFailures",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "LoginFailures",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "LoginFailures",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-LoginFailures",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "NetworkThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "NetworkThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "NetworkThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-NetworkThroughput",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "NetworkTransmitThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "NetworkTransmitThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "NetworkTransmitThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-NetworkTransmitThroughput",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "Queries",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "Queries",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "Queries",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-Queries",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "ResultSetCacheHitRatio",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "ResultSetCacheHitRatio",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "ResultSetCacheHitRatio",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-ResultSetCacheHitRatio",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "SelectLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "SelectLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "SelectLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-SelectLatency",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "SelectThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "SelectThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "SelectThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-SelectThroughput",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "UpdateLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "UpdateLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "UpdateLatency",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-UpdateLatency",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "UpdateThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "UpdateThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "UpdateThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-UpdateThroughput",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "VolumeBytesUsed",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "VolumeBytesUsed",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "VolumeBytesUsed",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-VolumeBytesUsed",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "VolumeReadIOPs",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "VolumeReadIOPs",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "VolumeReadIOPs",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-VolumeReadIOPs",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "VolumeWriteIOPs",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "VolumeWriteIOPs",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "VolumeWriteIOPs",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-VolumeWriteIOPs",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "AuroraReplicaLag",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "AuroraReplicaLag",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "AuroraReplicaLag",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-AuroraReplicaLag",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "AuroraReplicaLagMinimum",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "AuroraReplicaLagMinimum",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "AuroraReplicaLagMinimum",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-AuroraReplicaLagMinimum",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "NetworkReceiveThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "NetworkReceiveThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "NetworkReceiveThroughput",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-NetworkReceiveThroughput",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "BufferCacheHitRatio",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610a",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "BufferCacheHitRatio",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5610ap",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        "AWS/RDS",
+                        "BufferCacheHitRatio",
+                        "DBClusterIdentifier",
+                        "${prefix}-aurora5712",
+                        {
+                            "period": 60,
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "region": "${region}",
+                "stacked": false,
+                "title": "${prefix}-BufferCacheHitRatio",
+                "view": "timeSeries"
+            },
+            "type": "metric",
+            "width": 24,
+            "x": 0,
+            "y": 0
+        }
+    ]
+}

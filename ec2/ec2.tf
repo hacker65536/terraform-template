@@ -40,18 +40,20 @@ data "template_file" "user_data_ec2" {
 locals {
   ec2_instance_tyeps = [
     //    "t2.micro",
-    //    "c4.large",
-    //    "c4.xlarge",
-    "c5.2xlarge",
+    "c4.large",
   ]
+
+  //    "c4.xlarge",
+  //"c5.2xlarge",
 }
 
 resource "aws_instance" "demo" {
-  count                  = "${length(local.ec2_instance_tyeps)}"
+  //count                  = "${length(local.ec2_instance_tyeps)}"
+  count                  = "1"
   ami                    = "${data.aws_ami.amz2.id}"
   instance_type          = "${element(local.ec2_instance_tyeps,count.index)}"
   key_name               = "${data.terraform_remote_state.base.key_pair}"
-  subnet_id              = "${data.aws_subnet_ids.pub.ids[0]}"
+  subnet_id              = "${data.aws_subnet_ids.pub.ids[count.index % length(data.aws_availability_zones.azs.names)]}"
   vpc_security_group_ids = ["${data.aws_security_group.sec.id}"]
   iam_instance_profile   = "${aws_iam_instance_profile.ec2.name}"
   user_data_base64       = "${base64encode(data.template_file.user_data_ec2.rendered)}"
