@@ -28,6 +28,9 @@ resource "aws_db_instance" "mysql57" {
   monitoring_interval     = "${local.rds_enhanced_monitoring_interval}"
   monitoring_role_arn     = "${aws_iam_role.rds_enhanced_monitoring_role.arn}"
   backup_retention_period = 1
+  snapshot_identifier     = "${terraform.workspace}-mysql${replace(element(local.mysql57engines,count.index),".","")}-200-2000000"
+
+  multi_az = false
 
   enabled_cloudwatch_logs_exports = [
     "${local.cloudwatch_logs_exports}",
@@ -40,6 +43,17 @@ resource "aws_db_parameter_group" "mysql57" {
   name   = "${terraform.workspace}-mysql57-parameter-group"
   family = "mysql5.7"
   tags   = "${local.tags}"
+
+  parameter {
+    name  = "max_prepared_stmt_count"
+    value = "1048576"
+  }
+
+  parameter {
+    name         = "innodb_log_file_size"
+    value        = "1073741824"
+    apply_method = "pending-reboot"
+  }
 }
 
 resource "aws_db_option_group" "mysql57" {

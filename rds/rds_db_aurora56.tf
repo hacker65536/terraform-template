@@ -13,6 +13,7 @@ resource "aws_rds_cluster" "aurora56" {
   master_password        = "${local.rds_sec["password"]}"
   db_subnet_group_name   = "${aws_db_subnet_group.subnet.id}"
   vpc_security_group_ids = ["${data.aws_security_group.sec.id}"]
+  snapshot_identifier    = "${terraform.workspace}-aurora${replace(element(local.aurora56engines,count.index),".","")}-200-2000000"
 
   db_cluster_parameter_group_name = "${aws_rds_cluster_parameter_group.aurora56.id}"
   skip_final_snapshot             = true
@@ -46,6 +47,11 @@ resource "aws_db_parameter_group" "aurora56" {
   name   = "${terraform.workspace}-aurora56-db-parameter-group"
   family = "aurora5.6"
   tags   = "${local.tags}"
+
+  parameter {
+    name  = "max_prepared_stmt_count"
+    value = "1048576"
+  }
 }
 
 resource "aws_rds_cluster_parameter_group" "aurora56" {
