@@ -1,3 +1,4 @@
+#nat on/off  1 or 0
 variable "nat" {
-  default = 0
+  default = 1
 }
