@@ -30,7 +30,7 @@ resource "aws_subnet" "pri" {
 }
 
 resource "aws_subnet" "pub_nat" {
-  count                   = "${local.multi_azs}"
+  count                   = "${var.nat == 0 ? 0 : local.multi_azs}"
   vpc_id                  = "${aws_vpc.vpc.id}"
   cidr_block              = "${cidrsubnet(aws_vpc.vpc.cidr_block,8,count.index + local.multi_azs * 2)}"
   availability_zone       = "${data.aws_availability_zones.azs.names[count.index % local.multi_azs]}"
@@ -40,7 +40,7 @@ resource "aws_subnet" "pub_nat" {
 }
 
 resource "aws_subnet" "pri_nat" {
-  count                   = "${local.multi_azs}"
+  count                   = "${var.nat == 0 ? 0 : local.multi_azs}"
   vpc_id                  = "${aws_vpc.vpc.id}"
   cidr_block              = "${cidrsubnet(aws_vpc.vpc.cidr_block,8,count.index + local.multi_azs * 3)}"
   availability_zone       = "${data.aws_availability_zones.azs.names[count.index % local.multi_azs]}"
