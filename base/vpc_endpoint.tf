@@ -3,13 +3,12 @@ locals {
     "${data.aws_vpc_endpoint_service.s3.service_name}",
   ]
 
-  vpc_endpoints_interface = []
+  //vpc_endpoints_interface = []
 
-  /*
   vpc_endpoints_interface = [
     "${data.aws_vpc_endpoint_service.secretsmanager.service_name}",
+    "${data.aws_vpc_endpoint_service.codebuild.service_name}",
   ]
-	*/
 }
 
 resource "aws_vpc_endpoint" "ep_gateway" {
