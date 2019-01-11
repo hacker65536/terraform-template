@@ -5,3 +5,7 @@ data "aws_vpc_endpoint_service" "s3" {
 data "aws_vpc_endpoint_service" "secretsmanager" {
   service = "secretsmanager"
 }
+
+data "aws_vpc_endpoint_service" "codebuild" {
+  service = "codebuild"
+}

@@ -1,3 +1,5 @@
+# subnet_ids = ["${data.aws_subnet_ids.pri.ids}"]
+
 data "aws_subnet_ids" "pub" {
   vpc_id = "${data.aws_vpc.vpc.id}"
 
