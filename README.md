@@ -52,7 +52,7 @@ $ ssh-keygen -t rsa -N "" -f key_pair -C ""
 ```
 copy file to the directory
 ```console
-$ cp key_pair.pub /path/base/key_pair.pub
+$ cp ~/keyfiles/key_pair.pub .
 ```
 
 set ip you want to allow to access
