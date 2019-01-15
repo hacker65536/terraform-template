@@ -54,6 +54,20 @@ resource "aws_db_parameter_group" "mysql80" {
     value        = "1073741824"
     apply_method = "pending-reboot"
   }
+
+  parameter {
+    name         = "innodb_dedicated_server"
+    value        = "1"
+    apply_method = "pending-reboot"
+  }
+
+  /*
+  parameter {
+    name         = "innodb_flush_method"
+    value        = "O_DIRECT_NO_FSYNC"
+    apply_method = "pending-reboot"
+  }
+	*/
 }
 
 resource "aws_db_option_group" "mysql80" {
