@@ -47,12 +47,12 @@ $ cd base
 create key_pair if doesn't already exists
 ```console 
 $ cd
-$ mkdir keyfiles && cd $_
-$ ssh-keygen -t rsa -N "" -f key_pair -C ""
+$ mkdir -p keyfiles && cd $_
+$ ssh-keygen -t rsa -N "" -f ${prefix}_key_pair -C ""
 ```
 copy file to the directory
 ```console
-$ cp ~/keyfiles/key_pair.pub .
+$ cp ~/keyfiles/${prefix}_key_pair.pub ./key_pair.pub
 ```
 
 set ip you want to allow to access
