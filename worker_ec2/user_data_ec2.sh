@@ -88,6 +88,14 @@ require("json")
 sysbench.hooks.report_cumulative = sysbench.report_json
 EOF
 
+cat <<'EOF' > point_select.lua
+#!/usr/bin/env sysbench
+
+require("oltp_point_select")
+
+require("json")
+sysbench.hooks.report_cumulative = sysbench.report_json
+EOF
 
 cat <<'EOF' > update_index.lua
 #!/usr/bin/env sysbench
