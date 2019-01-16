@@ -28,14 +28,14 @@ resource "aws_db_instance" "mysql57" {
   monitoring_interval     = "${local.rds_enhanced_monitoring_interval}"
   monitoring_role_arn     = "${aws_iam_role.rds_enhanced_monitoring_role.arn}"
   backup_retention_period = 1
-  snapshot_identifier     = "${terraform.workspace}-mysql${replace(element(local.mysql57engines,count.index),".","")}-200-2000000"
+  backup_window           = "16:15-16:45"
+
+  //snapshot_identifier     = "${terraform.workspace}-mysql${replace(element(local.mysql57engines,count.index),".","")}-200-2000000"
 
   multi_az = false
-
   enabled_cloudwatch_logs_exports = [
     "${local.cloudwatch_logs_exports}",
   ]
-
   tags = "${merge(local.tags, map("Name", "${terraform.workspace}-mysql${replace(element(local.mysql57engines,count.index),".","")}"))}"
 }
 
@@ -49,10 +49,35 @@ resource "aws_db_parameter_group" "mysql57" {
     value = "1048576"
   }
 
+  /*
   parameter {
-    name         = "innodb_log_file_size"
-    value        = "1073741824"
+    name = "innodb_log_file_size"
+
+    //value = "1073741824"
+
+    //default
+    value        = "134217728"
     apply_method = "pending-reboot"
+  }
+	*/
+
+  parameter {
+    name  = "slow_query_log"
+    value = "1"
+
+    //value = ""
+  }
+  parameter {
+    name  = "long_query_time"
+    value = "0.5"
+
+    // value = ""
+  }
+  parameter {
+    name  = "log_output"
+    value = "FILE"
+
+    //  value = "TABLE"
   }
 }
 
@@ -72,4 +97,8 @@ output "mysql57_addresses" {
 
 output "mysql57_ids" {
   value = "${aws_db_instance.mysql57.*.id}"
+}
+
+output "mysql57_az" {
+  value = "${aws_db_instance.mysql57.*.availability_zone}"
 }
