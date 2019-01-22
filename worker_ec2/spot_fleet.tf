@@ -19,8 +19,9 @@ output "rdss" {
 
 # Request a Spot fleet
 resource "aws_spot_fleet_request" "cheap_compute" {
-  //count          = "${local.rdss * local.azs}"
-  count          = "6"
+  count = "${local.rdss * local.azs}"
+
+  // count          = "3"
   iam_fleet_role = "${aws_iam_role.fleet.arn}"
 
   //  spot_price          = "0.5"

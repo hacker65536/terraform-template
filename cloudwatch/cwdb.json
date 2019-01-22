@@ -7,8 +7,8 @@
                     [
                         "AWS/RDS",
                         "ActiveTransactions",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -17,8 +17,8 @@
                     [
                         "AWS/RDS",
                         "ActiveTransactions",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -27,8 +27,8 @@
                     [
                         "AWS/RDS",
                         "ActiveTransactions",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -52,8 +52,8 @@
                     [
                         "AWS/RDS",
                         "AuroraBinlogReplicaLag",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -62,8 +62,8 @@
                     [
                         "AWS/RDS",
                         "AuroraBinlogReplicaLag",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -72,8 +72,8 @@
                     [
                         "AWS/RDS",
                         "AuroraBinlogReplicaLag",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -97,8 +97,8 @@
                     [
                         "AWS/RDS",
                         "AuroraReplicaLagMaximum",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -107,8 +107,8 @@
                     [
                         "AWS/RDS",
                         "AuroraReplicaLagMaximum",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -117,8 +117,8 @@
                     [
                         "AWS/RDS",
                         "AuroraReplicaLagMaximum",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -142,8 +142,8 @@
                     [
                         "AWS/RDS",
                         "BinLogDiskUsage",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -152,8 +152,8 @@
                     [
                         "AWS/RDS",
                         "BinLogDiskUsage",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -162,8 +162,8 @@
                     [
                         "AWS/RDS",
                         "BinLogDiskUsage",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -187,8 +187,8 @@
                     [
                         "AWS/RDS",
                         "BacktrackChangeRecordsCreationRate",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -197,8 +197,8 @@
                     [
                         "AWS/RDS",
                         "BacktrackChangeRecordsCreationRate",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -207,8 +207,8 @@
                     [
                         "AWS/RDS",
                         "BacktrackChangeRecordsCreationRate",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -232,8 +232,8 @@
                     [
                         "AWS/RDS",
                         "BacktrackChangeRecordsStored",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -242,8 +242,8 @@
                     [
                         "AWS/RDS",
                         "BacktrackChangeRecordsStored",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -252,8 +252,8 @@
                     [
                         "AWS/RDS",
                         "BacktrackChangeRecordsStored",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -277,8 +277,8 @@
                     [
                         "AWS/RDS",
                         "BacktrackWindowActual",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -287,8 +287,8 @@
                     [
                         "AWS/RDS",
                         "BacktrackWindowActual",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -297,8 +297,8 @@
                     [
                         "AWS/RDS",
                         "BacktrackWindowActual",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -322,8 +322,8 @@
                     [
                         "AWS/RDS",
                         "BacktrackWindowAlert",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -332,8 +332,8 @@
                     [
                         "AWS/RDS",
                         "BacktrackWindowAlert",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -342,8 +342,8 @@
                     [
                         "AWS/RDS",
                         "BacktrackWindowAlert",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -367,8 +367,8 @@
                     [
                         "AWS/RDS",
                         "BlockedTransactions",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -377,8 +377,8 @@
                     [
                         "AWS/RDS",
                         "BlockedTransactions",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -387,8 +387,8 @@
                     [
                         "AWS/RDS",
                         "BlockedTransactions",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -412,8 +412,8 @@
                     [
                         "AWS/RDS",
                         "CommitLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -422,8 +422,8 @@
                     [
                         "AWS/RDS",
                         "CommitLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -432,8 +432,8 @@
                     [
                         "AWS/RDS",
                         "CommitLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -457,8 +457,8 @@
                     [
                         "AWS/RDS",
                         "CommitThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -467,8 +467,8 @@
                     [
                         "AWS/RDS",
                         "CommitThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -477,8 +477,8 @@
                     [
                         "AWS/RDS",
                         "CommitThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -502,8 +502,8 @@
                     [
                         "AWS/RDS",
                         "CPUCreditBalance",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -512,8 +512,8 @@
                     [
                         "AWS/RDS",
                         "CPUCreditBalance",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -522,8 +522,8 @@
                     [
                         "AWS/RDS",
                         "CPUCreditBalance",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -547,8 +547,8 @@
                     [
                         "AWS/RDS",
                         "CPUCreditUsage",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -557,8 +557,8 @@
                     [
                         "AWS/RDS",
                         "CPUCreditUsage",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -567,8 +567,8 @@
                     [
                         "AWS/RDS",
                         "CPUCreditUsage",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -592,8 +592,8 @@
                     [
                         "AWS/RDS",
                         "CPUUtilization",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -602,8 +602,8 @@
                     [
                         "AWS/RDS",
                         "CPUUtilization",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -612,8 +612,8 @@
                     [
                         "AWS/RDS",
                         "CPUUtilization",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -637,8 +637,8 @@
                     [
                         "AWS/RDS",
                         "DatabaseConnections",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -647,8 +647,8 @@
                     [
                         "AWS/RDS",
                         "DatabaseConnections",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -657,8 +657,8 @@
                     [
                         "AWS/RDS",
                         "DatabaseConnections",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -682,8 +682,8 @@
                     [
                         "AWS/RDS",
                         "DDLLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -692,8 +692,8 @@
                     [
                         "AWS/RDS",
                         "DDLLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -702,8 +702,8 @@
                     [
                         "AWS/RDS",
                         "DDLLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -727,8 +727,8 @@
                     [
                         "AWS/RDS",
                         "DDLThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -737,8 +737,8 @@
                     [
                         "AWS/RDS",
                         "DDLThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -747,8 +747,8 @@
                     [
                         "AWS/RDS",
                         "DDLThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -772,8 +772,8 @@
                     [
                         "AWS/RDS",
                         "Deadlocks",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -782,8 +782,8 @@
                     [
                         "AWS/RDS",
                         "Deadlocks",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -792,8 +792,8 @@
                     [
                         "AWS/RDS",
                         "Deadlocks",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -817,8 +817,8 @@
                     [
                         "AWS/RDS",
                         "DeleteLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -827,8 +827,8 @@
                     [
                         "AWS/RDS",
                         "DeleteLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -837,8 +837,8 @@
                     [
                         "AWS/RDS",
                         "DeleteLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -862,8 +862,8 @@
                     [
                         "AWS/RDS",
                         "DeleteThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -872,8 +872,8 @@
                     [
                         "AWS/RDS",
                         "DeleteThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -882,8 +882,8 @@
                     [
                         "AWS/RDS",
                         "DeleteThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -907,8 +907,8 @@
                     [
                         "AWS/RDS",
                         "DMLLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -917,8 +917,8 @@
                     [
                         "AWS/RDS",
                         "DMLLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -927,8 +927,8 @@
                     [
                         "AWS/RDS",
                         "DMLLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -952,8 +952,8 @@
                     [
                         "AWS/RDS",
                         "DMLThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -962,8 +962,8 @@
                     [
                         "AWS/RDS",
                         "DMLThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -972,8 +972,8 @@
                     [
                         "AWS/RDS",
                         "DMLThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -997,8 +997,8 @@
                     [
                         "AWS/RDS",
                         "EngineUptime",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1007,8 +1007,8 @@
                     [
                         "AWS/RDS",
                         "EngineUptime",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1017,8 +1017,8 @@
                     [
                         "AWS/RDS",
                         "EngineUptime",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1042,8 +1042,8 @@
                     [
                         "AWS/RDS",
                         "FreeableMemory",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1052,8 +1052,8 @@
                     [
                         "AWS/RDS",
                         "FreeableMemory",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1062,8 +1062,8 @@
                     [
                         "AWS/RDS",
                         "FreeableMemory",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1087,8 +1087,8 @@
                     [
                         "AWS/RDS",
                         "FreeLocalStorage",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1097,8 +1097,8 @@
                     [
                         "AWS/RDS",
                         "FreeLocalStorage",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1107,8 +1107,8 @@
                     [
                         "AWS/RDS",
                         "FreeLocalStorage",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1132,8 +1132,8 @@
                     [
                         "AWS/RDS",
                         "InsertLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1142,8 +1142,8 @@
                     [
                         "AWS/RDS",
                         "InsertLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1152,8 +1152,8 @@
                     [
                         "AWS/RDS",
                         "InsertLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1177,8 +1177,8 @@
                     [
                         "AWS/RDS",
                         "InsertThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1187,8 +1187,8 @@
                     [
                         "AWS/RDS",
                         "InsertThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1197,8 +1197,8 @@
                     [
                         "AWS/RDS",
                         "InsertThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1222,8 +1222,8 @@
                     [
                         "AWS/RDS",
                         "LoginFailures",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1232,8 +1232,8 @@
                     [
                         "AWS/RDS",
                         "LoginFailures",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1242,8 +1242,8 @@
                     [
                         "AWS/RDS",
                         "LoginFailures",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1267,8 +1267,8 @@
                     [
                         "AWS/RDS",
                         "NetworkThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1277,8 +1277,8 @@
                     [
                         "AWS/RDS",
                         "NetworkThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1287,8 +1287,8 @@
                     [
                         "AWS/RDS",
                         "NetworkThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1312,8 +1312,8 @@
                     [
                         "AWS/RDS",
                         "NetworkTransmitThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1322,8 +1322,8 @@
                     [
                         "AWS/RDS",
                         "NetworkTransmitThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1332,8 +1332,8 @@
                     [
                         "AWS/RDS",
                         "NetworkTransmitThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1357,8 +1357,8 @@
                     [
                         "AWS/RDS",
                         "Queries",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1367,8 +1367,8 @@
                     [
                         "AWS/RDS",
                         "Queries",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1377,8 +1377,8 @@
                     [
                         "AWS/RDS",
                         "Queries",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1402,8 +1402,8 @@
                     [
                         "AWS/RDS",
                         "ResultSetCacheHitRatio",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1412,8 +1412,8 @@
                     [
                         "AWS/RDS",
                         "ResultSetCacheHitRatio",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1422,8 +1422,8 @@
                     [
                         "AWS/RDS",
                         "ResultSetCacheHitRatio",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1447,8 +1447,8 @@
                     [
                         "AWS/RDS",
                         "SelectLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1457,8 +1457,8 @@
                     [
                         "AWS/RDS",
                         "SelectLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1467,8 +1467,8 @@
                     [
                         "AWS/RDS",
                         "SelectLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1492,8 +1492,8 @@
                     [
                         "AWS/RDS",
                         "SelectThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1502,8 +1502,8 @@
                     [
                         "AWS/RDS",
                         "SelectThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1512,8 +1512,8 @@
                     [
                         "AWS/RDS",
                         "SelectThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1537,8 +1537,8 @@
                     [
                         "AWS/RDS",
                         "UpdateLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1547,8 +1547,8 @@
                     [
                         "AWS/RDS",
                         "UpdateLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1557,8 +1557,8 @@
                     [
                         "AWS/RDS",
                         "UpdateLatency",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1582,8 +1582,8 @@
                     [
                         "AWS/RDS",
                         "UpdateThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1592,8 +1592,8 @@
                     [
                         "AWS/RDS",
                         "UpdateThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1602,8 +1602,8 @@
                     [
                         "AWS/RDS",
                         "UpdateThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1627,8 +1627,8 @@
                     [
                         "AWS/RDS",
                         "VolumeBytesUsed",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1637,8 +1637,8 @@
                     [
                         "AWS/RDS",
                         "VolumeBytesUsed",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1647,8 +1647,8 @@
                     [
                         "AWS/RDS",
                         "VolumeBytesUsed",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1672,8 +1672,8 @@
                     [
                         "AWS/RDS",
                         "VolumeReadIOPs",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1682,8 +1682,8 @@
                     [
                         "AWS/RDS",
                         "VolumeReadIOPs",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1692,8 +1692,8 @@
                     [
                         "AWS/RDS",
                         "VolumeReadIOPs",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1717,8 +1717,8 @@
                     [
                         "AWS/RDS",
                         "VolumeWriteIOPs",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1727,8 +1727,8 @@
                     [
                         "AWS/RDS",
                         "VolumeWriteIOPs",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1737,8 +1737,8 @@
                     [
                         "AWS/RDS",
                         "VolumeWriteIOPs",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1762,8 +1762,8 @@
                     [
                         "AWS/RDS",
                         "AuroraReplicaLag",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1772,8 +1772,8 @@
                     [
                         "AWS/RDS",
                         "AuroraReplicaLag",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1782,8 +1782,8 @@
                     [
                         "AWS/RDS",
                         "AuroraReplicaLag",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1807,8 +1807,8 @@
                     [
                         "AWS/RDS",
                         "AuroraReplicaLagMinimum",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1817,8 +1817,8 @@
                     [
                         "AWS/RDS",
                         "AuroraReplicaLagMinimum",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1827,8 +1827,8 @@
                     [
                         "AWS/RDS",
                         "AuroraReplicaLagMinimum",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1852,8 +1852,8 @@
                     [
                         "AWS/RDS",
                         "NetworkReceiveThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1862,8 +1862,8 @@
                     [
                         "AWS/RDS",
                         "NetworkReceiveThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1872,8 +1872,8 @@
                     [
                         "AWS/RDS",
                         "NetworkReceiveThroughput",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1897,8 +1897,8 @@
                     [
                         "AWS/RDS",
                         "BufferCacheHitRatio",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610a",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5641",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1907,8 +1907,8 @@
                     [
                         "AWS/RDS",
                         "BufferCacheHitRatio",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5610ap",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql5723",
                         {
                             "period": 60,
                             "stat": "Maximum"
@@ -1917,8 +1917,8 @@
                     [
                         "AWS/RDS",
                         "BufferCacheHitRatio",
-                        "DBClusterIdentifier",
-                        "${prefix}-aurora5712",
+                        "DBInstanceIdentifier",
+                        "${prefix}-mysql8011",
                         {
                             "period": 60,
                             "stat": "Maximum"
