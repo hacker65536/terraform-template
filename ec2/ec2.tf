@@ -3,12 +3,13 @@
 #}
 
 data "template_file" "user_data_ec2" {
+  count    = "${length(data.terraform_remote_state.rds.mysql_addresses)}"
   template = "${file("user_data_ec2.sh")}"
 
   vars {
     //  ecs_cluster = "${aws_ecs_cluster.cluster.name}"
     password = "foobarbaz"
-    list     = "${join("\n",data.terraform_remote_state.rds.mysql_addresses)}"
+    list     = "${element(data.terraform_remote_state.rds.mysql_addresses,count.index)}"
   }
 }
 
@@ -88,7 +89,7 @@ resource "aws_instance" "ope" {
 
   vpc_security_group_ids = ["${data.aws_security_group.sec.id}"]
   iam_instance_profile   = "${aws_iam_instance_profile.ec2.name}"
-  user_data_base64       = "${base64encode(data.template_file.user_data_ec2.rendered)}"
+  user_data_base64       = "${base64encode(data.template_file.user_data_ec2.*.rendered[count.index])}"
   monitoring             = true
   tags                   = "${merge(local.tags, map("Name", "${terraform.workspace}-demo"),map("Backup-Generation","0"))}"
 }
@@ -100,4 +101,8 @@ output "userdata" {
 */
 output "opips" {
   value = "${aws_instance.ope.*.public_ip}"
+}
+
+output "opazs" {
+  value = "${aws_instance.ope.*.availability_zone}"
 }

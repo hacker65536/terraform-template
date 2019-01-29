@@ -28,14 +28,15 @@ resource "aws_db_instance" "mariadb102" {
   monitoring_interval     = "${local.rds_enhanced_monitoring_interval}"
   monitoring_role_arn     = "${aws_iam_role.rds_enhanced_monitoring_role.arn}"
   backup_retention_period = 1
-  snapshot_identifier     = "${terraform.workspace}-mariadb${replace(element(local.mariadb102engines,count.index),".","")}-200-2000000"
+  backup_window           = "16:15-16:45"
 
   multi_az = false
+
+  //snapshot_identifier     = "${terraform.workspace}-mariadb${replace(element(local.mariadb102engines,count.index),".","")}-200-2000000"
 
   enabled_cloudwatch_logs_exports = [
     "${local.cloudwatch_logs_exports}",
   ]
-
   tags = "${merge(local.tags, map("Name", "${terraform.workspace}-mariadb${replace(element(local.mariadb102engines,count.index),".","")}"))}"
 }
 
@@ -47,6 +48,27 @@ resource "aws_db_parameter_group" "mariadb102" {
   parameter {
     name  = "max_prepared_stmt_count"
     value = "1048576"
+  }
+
+  parameter {
+    name  = "slow_query_log"
+    value = "1"
+
+    //value = ""
+  }
+
+  parameter {
+    name  = "long_query_time"
+    value = "0.5"
+
+    // value = ""
+  }
+
+  parameter {
+    name  = "log_output"
+    value = "FILE"
+
+    //  value = "TABLE"
   }
 }
 
