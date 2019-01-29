@@ -28,6 +28,7 @@ resource "aws_db_instance" "mariadb103" {
   monitoring_interval     = "${local.rds_enhanced_monitoring_interval}"
   monitoring_role_arn     = "${aws_iam_role.rds_enhanced_monitoring_role.arn}"
   backup_retention_period = 1
+  backup_window           = "16:15-16:45"
 
   multi_az = false
 
@@ -47,6 +48,27 @@ resource "aws_db_parameter_group" "mariadb103" {
   parameter {
     name  = "max_prepared_stmt_count"
     value = "1048576"
+  }
+
+  parameter {
+    name  = "slow_query_log"
+    value = "1"
+
+    //value = ""
+  }
+
+  parameter {
+    name  = "long_query_time"
+    value = "0.5"
+
+    // value = ""
+  }
+
+  parameter {
+    name  = "log_output"
+    value = "FILE"
+
+    //  value = "TABLE"
   }
 }
 
