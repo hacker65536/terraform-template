@@ -91,7 +91,7 @@ resource "aws_instance" "ope" {
   iam_instance_profile   = "${aws_iam_instance_profile.ec2.name}"
   user_data_base64       = "${base64encode(data.template_file.user_data_ec2.*.rendered[count.index])}"
   monitoring             = true
-  tags                   = "${merge(local.tags, map("Name", "${terraform.workspace}-demo"),map("Backup-Generation","0"))}"
+  tags                   = "${merge(local.tags, map("Name", "${terraform.workspace}-ope"))}"
 }
 
 /*
