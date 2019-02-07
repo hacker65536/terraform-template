@@ -60,10 +60,13 @@ set ip you want to allow to access
 $ vim var_secips.tf
 ```
 or
+
 ```console
 $ cp var_secips{,_override}.tf
-$ vim var_secips_override.tf
+$ sed -e "s/192.168.1.1/$(curl -Ss checkip.amazonaws.com)/" -i var_secips_override.tf
+# vim var_secips_override.tf
 ```
+
 
 ```console
 $ terraform paln
