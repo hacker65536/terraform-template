@@ -47,8 +47,8 @@ $ cd base
 create key_pair if doesn't already exists
 ```console 
 $ cd
-$ mkdir -p keyfiles && cd $_
-$ ssh-keygen -t rsa -N "" -f ${prefix}_key_pair -C ""
+$ mkdir -p ~/keyfiles 
+$ cd ~/keyfiles && ssh-keygen -t rsa -N "" -f ${prefix}_key_pair -C "" && cd -
 ```
 copy file to the directory
 ```console
