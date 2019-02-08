@@ -90,7 +90,7 @@ terraform init \
 -backend-config="region=$region" \
 -backend-config="profile=$profile" \
 -backend-config="dynamodb_table=$dynamodb_table" \
--backend-config="workspace_key_prefix=$dir"
+-backend-config="workspace_key_prefix=$(basename $dir)"
 
 if ! terraform workspace select "$workspace" > /dev/null 2>&1
 then
