@@ -1,3 +1,6 @@
 export TF_VAR_region=us-east-2
 export TF_VAR_profile=myprofile
 export TF_VAR_author=myname
+
+export TF_VAR_github_token=settings_developersettings_personalaccesstokens
+export TF_VAR_github_organization=organization
