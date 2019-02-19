@@ -107,7 +107,7 @@ resource "aws_db_instance" "mysql80" {
     }"
 }
 ```
-### paramater
+### parameter
 
 - 大量にqueryを実行するために`max_prepqred_stmt_count`をmaxに設定。
 - slow logをcloudwatchに出力するための設定
