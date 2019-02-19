@@ -97,7 +97,10 @@ resource "aws_db_instance" "mysql80" {
   enabled_cloudwatch_logs_exports = [
     "${local.cloudwatch_logs_exports}",
   ]
-  tags = "${merge(local.tags, map("Name", "${terraform.workspace}-mysql${replace(element(local.mysql80engines,count.index),".","")}"))}"
+  tags = "${merge(
+    local.tags, 
+    map("Name", "${terraform.workspace}-mysql${replace(element(local.mysql80engines,count.index),".","")}"))
+    }"
 }
 
 resource "aws_db_parameter_group" "mysql80" {
