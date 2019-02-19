@@ -14,10 +14,37 @@ base
 - nat gateway (option)
 - vpc endpoint (option)
 
+### nat gateway
+nat 環境は選択可 routing,subnetも`count="${var.nat == 0 ? 0 : 1}"`で制御
+```HCL
+resource "aws_nat_gateway" "nat" {
+  count         = "${var.nat == 0 ? 0 : 1}"
+  allocation_id = "${aws_eip.nat.id}"
+  subnet_id     = "${aws_subnet.pub.*.id[0]}"
+}
 
-### subnet
+resource "aws_eip" "nat" {
+  count = "${var.nat == 0 ? 0 : 1}"
+  vpc   = true
+  tags  = "${merge(local.tags, map("Name", "${terraform.workspace}-nat-ip"))}"
+}
+```
+```HCL
+resource "aws_route" "pri_nat" {
+  count                  = "${var.nat == 0 ? 0 : 1}"
+  route_table_id         = "${aws_route_table.pri_nat.id}"
+  destination_cidr_block = "0.0.0.0/0"
+  nat_gateway_id         = "${aws_nat_gateway.nat.id}"
+  depends_on             = ["aws_route_table.pri_nat"]
+}
 
-nat 環境は選択可
+resource "aws_route_table_association" "pri_nat" {
+  count          = "${var.nat == 0 ? 0 : local.multi_azs}"
+  subnet_id      = "${aws_subnet.pri_nat.*.id[count.index]}"
+  route_table_id = "${aws_route_table.pri_nat.id}"
+}
+```
+
 ```HCL
 resource "aws_subnet" "pri_nat" {
   count                   = "${var.nat == 0 ? 0 : local.multi_azs}"
@@ -29,6 +56,9 @@ resource "aws_subnet" "pri_nat" {
   tags = "${merge(local.tags, map("Name", "${terraform.workspace}-pri-nat","SubnetRole","pri_nat"))}"
 }
 ```
+
+### subnet
+
 data resourceでフィルターして利用できるようにsubnet毎の役割をタグ `tag:SubnetRole`をつける
 ```HCL
 resource "aws_subnet" "pri" {
