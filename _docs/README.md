@@ -1,4 +1,4 @@
-terraform directory
+terraform director
 --
 - base (vpc,network,etc)
 - rds (db instance ,etc)
