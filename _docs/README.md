@@ -106,7 +106,10 @@ resource "aws_db_instance" "mysql80" {
     map("Name", "${terraform.workspace}-mysql${replace(element(local.mysql80engines,count.index),".","")}"))
     }"
 }
+```
 
+
+```HCL
 resource "aws_db_parameter_group" "mysql80" {
   name   = "${terraform.workspace}-mysql80-parameter-group"
   family = "mysql8.0"
