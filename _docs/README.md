@@ -680,9 +680,14 @@ resource "aws_spot_fleet_request" "cheap_compute" {
 ```
 ### ssm
 
+amazonlinux2 を利用しているためssm agentはデフォルトで起動している前提
+
 - sysbenchのコマンドをruncommandを利用して一斉制御を行う
 - sysbenchの出力をcloudwatchlogsに出力をする
 - sysbenchの実行コマンドをssm documentを利用してwrap
+
+
+
 ```HCL
 data "template_file" "ssmdoc" {
   template = "${file("ssmdoc.json")}"
