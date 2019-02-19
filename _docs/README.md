@@ -89,7 +89,7 @@ resource "aws_db_instance" "mysql80" {
   monitoring_interval     = "${local.rds_enhanced_monitoring_interval}"
   monitoring_role_arn     = "${aws_iam_role.rds_enhanced_monitoring_role.arn}"
   backup_retention_period = 1
-  backup_window           = "16:15-16:45"
+  backup_window           = "${local.backup_window}"
    
   /*
   snapshot_identifier = "${terraform.workspace}-mysql${replace(
