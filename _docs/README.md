@@ -242,7 +242,7 @@ resource "aws_instance" "ope" {
 user_dataはsysbenchのコマンド操作がほとんどのため、worker_ec2とほぼ同じ
 
 - sysbenchのinstallとsysbenchのコマンドをwrapしたscript
-- 出力をjsonに変えるためにrepost_json関数で整形
+- sysbenchの結果出力を簡易に集計できるようにするためにjsonフォーマットに変更、repost_json関数作成して整形を行う
 
 
 通常の出力フォーマット
