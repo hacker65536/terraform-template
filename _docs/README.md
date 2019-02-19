@@ -534,3 +534,79 @@ function sysbench.report_json(stat)
 end
 EOF
 ```
+
+#### parameter list
+
+```
+mkdir docker
+cat <<'EOF' > docker/Dockerfile
+From mysql:8
+
+
+add rds-* /usr/local/src/
+add my.cnf /etc/mysql/
+EOF
+
+cat <<'EOF' > docker/outputparam2.sh
+#!/bin/bash
+
+dir="params"
+mkdir -p ./$dir
+prefix="tformtmp5-"
+
+#"tformtmp5--aurora56.cluster-ccm7kbox0as4.us-west-2.rds.amazonaws.com"
+#"tformtmp5--aurora57.cluster-ccm7kbox0as4.us-west-2.rds.amazonaws.com"
+#"tformtmp5--mariadb10114.ccm7kbox0as4.us-west-2.rds.amazonaws.com"
+#"tformtmp5--mariadb10134.ccm7kbox0as4.us-west-2.rds.amazonaws.com"
+#"tformtmp5--mariadb10215.ccm7kbox0as4.us-west-2.rds.amazonaws.com"
+#"tformtmp5--mysql5639.ccm7kbox0as4.us-west-2.rds.amazonaws.com"
+#"tformtmp5--mysql5640.ccm7kbox0as4.us-west-2.rds.amazonaws.com"
+#"tformtmp5--mysql5722.ccm7kbox0as4.us-west-2.rds.amazonaws.com"
+
+
+for host in $(cat ../list)
+do
+tmp=$${host%%.*}
+mysql -u sbtest -pfoobarbaz -h $host -s -e "show variables" >  $dir/$${tmp#$prefix}
+done
+
+
+
+docker run --rm -d --name mysql8  -e MYSQL_ROOT_PASSWORD=my8pass -p 3306:3306  mysql:8
+docker exec -it -w /etc/mysql mysql8 sed -i 's/^\(secure-file-priv\).*/\1= ""/' my.cnf
+sleep 3
+docker kill -s HUP mysql8
+sleep 10
+mysqladmin -uroot -pmy8pass -h 127.0.0.1 create testdb
+docker cp ./$dir mysql8:/usr/local/src
+
+mysql -uroot -pmy8pass -h 127.0.0.1 -e "create table if not exists mysql ( name varchar(255), primary key(name))" testdb
+
+for table in $(ls $dir)
+do
+mysql -uroot -pmy8pass -h 127.0.0.1 -e "create table if not exists $table ( name varchar(255),value text, primary key(name))" testdb
+mysql -uroot -pmy8pass -h 127.0.0.1 -e "LOAD DATA INFILE '/usr/local/src/$dir/$table' INTO table $table" testdb
+mysql -uroot -pmy8pass -h 127.0.0.1 -e "replace into mysql(name) select name from $table;" testdb
+#echo $table
+done
+
+:>sql
+col="mysql.name, "
+col2="'param', "
+for table in $(ls $dir)
+do
+echo "left outer join $${table} on mysql.name=$${table}.name ">>sql
+col+="$${table}.value as $${table}, "
+col2+="'$${table}', "
+done
+
+echo " INTO OUTFILE '/tmp/rds-param-comp.csv' FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"'">>sql
+sed "1i select $${col%, } from mysql " -i sql
+sed "1i select $${col2%, } union " -i sql
+
+mysql -uroot -pmy8pass -h 127.0.0.1 testdb <sql
+
+docker cp mysql8:/tmp/rds-param-comp.csv ./rds-param-comp.csv
+docker stop mysql8
+EOF
+```
