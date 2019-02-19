@@ -1,4 +1,8 @@
 
+- base (vpc,network,etc)
+- rds (db instance ,etc)
+- ec2 (preparation for data set)
+- worker_ec2 (client: spot_fleet, sms)
 
 
 base
