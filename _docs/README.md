@@ -267,6 +267,7 @@ sudo yum -y install mysql
 ```
 
 - script
+
 config
 ```bash
 cat <<'EOF' > config
@@ -327,7 +328,6 @@ $2 \
 run
 EOF
 ```
-
 list
 ```bash
 cat <<'EOF' > list
@@ -361,4 +361,103 @@ mysql -h $1 -usbtest --password=${password} sbtest -e 'show tables' 2>/dev/null
 mysql -h $1 -usbtest --password=${password} sbtest -e 'show create table sbtest1' 2>/dev/null
 EOF
 ```
+- sysbench test json output(lua)
 
+read_only
+```bash
+cat <<'EOF' > read_only.lua
+#!/usr/bin/env sysbench
+
+require("oltp_read_only")
+require("json")
+sysbench.hooks.report_cumulative = sysbench.report_json
+EOF
+```
+read_write
+```bash
+cat <<'EOF' > read_write.lua
+#!/usr/bin/env sysbench
+
+require("oltp_read_write")
+require("json")
+sysbench.hooks.report_cumulative = sysbench.report_json
+EOF
+```
+write_only
+```bash
+cat <<'EOF' > write_only.lua
+#!/usr/bin/env sysbench
+
+require("oltp_write_only")
+require("json")
+sysbench.hooks.report_cumulative = sysbench.report_json
+EOF
+```
+update_index
+```bash
+cat <<'EOF' > update_index.lua
+#!/usr/bin/env sysbench
+
+require("oltp_update_index")
+require("json")
+sysbench.hooks.report_cumulative = sysbench.report_json
+EOF
+```
+
+json.lua
+```bash
+cat <<'EOF'> json.lua
+function sysbench.report_json(stat)
+   if not gobj then
+      io.write('')
+      -- hack to print the closing bracket when the Lua state of the reporting
+      -- thread is closed
+      gobj = newproxy(true)
+      getmetatable(gobj).__gc = function () io.write('') end
+   else
+      io.write(',\n')
+   end
+
+   local seconds = stat.time_interval
+   io.write(([[
+{
+  "qp": {
+    "reads": %d,
+    "writes": %d,
+    "other": %d,
+    "total": %d
+  },
+  "trx": %d,
+  "err": %d,
+  "recon": %d,
+  "timetotal": %.4f,
+  "tps": %.4f,
+  "latency": {
+    "min": %4.10f,
+    "avg": %4.10f,
+    "max": %4.10f,
+    "pct": %4.10f,
+    "sum": %4.10f
+  }
+}
+]]):format(
+        stat.reads,
+        stat.writes,
+        stat.other,
+        stat.reads + stat.writes + stat.other,
+
+        stat.events,
+        stat.errors ,
+        stat.reconnects,
+        stat.time_total,
+        stat.events / seconds,
+
+        stat.latency_min,
+        stat.latency_avg,
+        stat.latency_max,
+        stat.latency_pct,
+        stat.latency_sum
+   ))
+end
+EOF
+```
