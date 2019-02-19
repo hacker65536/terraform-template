@@ -91,7 +91,7 @@ resource "aws_db_instance" "mysql80" {
   backup_retention_period = 1
   backup_window           = "16:15-16:45"
 
-  //snapshot_identifier = "${terraform.workspace}-mysql${replace(element(local.mysql80engines,count.index),".","")}-200-2000000"
+  //snapshot_identifier = "${terraform.workspace}-mysql${replace(element(local.mysql80engines,count.index),".","")}-2002000000"
 
   multi_az = false
   enabled_cloudwatch_logs_exports = [
