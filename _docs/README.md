@@ -239,6 +239,77 @@ resource "aws_instance" "ope" {
 
 ### user_data
 
+- sysbenchのinstallとsysbenchのコマンドをwrapしたscript
+- 出力をjsonに変えるためにrepost_json関数で整形
+
+
+通常の出力フォーマット
+```
+$ sysbench --test=oltp --db-driver=mysql --mysql-password=sbtest run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 1
+
+Doing OLTP test.
+Running mixed OLTP test
+Using Special distribution (12 iterations,  1 pct of values are returned in 75 pct cases)
+Using "BEGIN" for starting transactions
+Using auto_inc on the id column
+Maximum number of requests for OLTP test is limited to 10000
+Threads started!
+Done.
+
+OLTP test statistics:
+    queries performed:
+        read:                            140000
+        write:                           50000
+        other:                           20000
+        total:                           210000
+    transactions:                        10000  (25.72 per sec.)
+    deadlocks:                           0      (0.00 per sec.)
+    read/write requests:                 190000 (488.63 per sec.)
+    other operations:                    20000  (51.43 per sec.)
+
+Test execution summary:
+    total time:                          388.8436s
+    total number of events:              10000
+    total time taken by event execution: 388.7773
+    per-request statistics:
+         min:                                 28.61ms
+         avg:                                 38.88ms
+         max:                                178.72ms
+         approx.  95 percentile:              44.83ms
+
+Threads fairness:
+    events (avg/stddev):           10000.0000/0.00
+    execution time (avg/stddev):   388.7773/0.00
+```
+
+jsonフォーマット
+```json
+{
+    "qp": {
+        "reads": 0,
+        "writes": 2738411,
+        "other": 0,
+        "total": 2738411
+    },
+    "trx": 2738411,
+    "err": 0,
+    "recon": 0,
+    "timetotal": 1801.7208,
+    "tps": 1519.8864,
+    "latency": {
+        "min": 0.002261744,
+        "avg": 0.065793314,
+        "max": 3.812709558,
+        "pct": 0.1899294783,
+        "sum": 180169.136323044
+    }
+}
+```
+
 #### install sysbench
 ```bash
 #!/bin/bash
