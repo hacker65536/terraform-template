@@ -58,6 +58,9 @@ rds
 
 ### db_instance
 
+- `enabled_cloudwatch_logs_exports` に`error`,`general`,`slowquery`を設定
+- EnhancedMonitoringをonに設定
+
 ```HCL
 locals {
   mysql80engines = [
