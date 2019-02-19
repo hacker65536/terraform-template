@@ -7,7 +7,7 @@ base
 - subunet (public , private)
 - subnet (public(natgw) , private(nat)) (option)
 - route table /associate
-- securitygroup
+- security group
 - internet gateway
 - dhcp option set
 - key pair
