@@ -1,6 +1,6 @@
 locals {
   asggroup = [
-    "",
+    "1",
   ]
 }
 
@@ -9,7 +9,7 @@ resource "aws_autoscaling_group" "asg" {
 
   //desired_capacity          = 0
   launch_configuration      = "${aws_launch_configuration.ec2_node.id}"
-  max_size                  = 80
+  max_size                  = 5
   min_size                  = 0
   default_cooldown          = 60
   health_check_grace_period = 40

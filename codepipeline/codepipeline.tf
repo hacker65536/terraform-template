@@ -1,7 +1,3 @@
-data "aws_kms_alias" "s3kmskey" {
-  name = "alias/myKmsKey"
-}
-
 resource "aws_codepipeline" "codepipeline" {
   name     = "${terraform.workspace}-codepipeline"
   role_arn = "${aws_iam_role.codepipeline.arn}"
@@ -11,7 +7,7 @@ resource "aws_codepipeline" "codepipeline" {
     type     = "S3"
 
     encryption_key {
-      id   = "${data.aws_kms_alias.s3kmskey.arn}"
+      id   = "${aws_kms_key.codepipeline.arn}"
       type = "KMS"
     }
   }
@@ -27,11 +23,7 @@ resource "aws_codepipeline" "codepipeline" {
       version          = "1"
       output_artifacts = ["test"]
 
-      configuration = {
-        Owner  = "my-organization"
-        Repo   = "test"
-        Branch = "master"
-      }
+      configuration = "${local.source_config}"
     }
   }
 
@@ -47,7 +39,7 @@ resource "aws_codepipeline" "codepipeline" {
       version         = "1"
 
       configuration = {
-        ProjectName = "test"
+        ProjectName = "${aws_codebuild_project.codebuild.name}"
       }
     }
   }
