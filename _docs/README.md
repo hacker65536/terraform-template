@@ -1,4 +1,5 @@
-
+terraform directory
+--
 - base (vpc,network,etc)
 - rds (db instance ,etc)
 - ec2 (preparation for data set)
@@ -186,5 +187,52 @@ resource "aws_db_parameter_group" "mysql80" {
     value = "FILE"
   }
   
+}
+```
+
+ec2
+--
+- ec2
+
+### ec2 instance
+rdsから各db_instanceのazを受け取ってdb_instanceと同じsubnetにdata set投入用ec2を立てる
+```HCL
+output "mysql_azs" {
+  value = [
+    "${aws_db_instance.mysql56.*.availability_zone}",
+    "${aws_db_instance.mysql57.*.availability_zone}",
+    "${aws_db_instance.mysql80.*.availability_zone}",
+    "${aws_db_instance.mariadb101.*.availability_zone}",
+    "${aws_db_instance.mariadb102.*.availability_zone}",
+    "${aws_db_instance.mariadb103.*.availability_zone}",
+    "${aws_rds_cluster_instance.aurora56.*.availability_zone}",
+    "${aws_rds_cluster_instance.aurora57.*.availability_zone}",
+  ]
+}
+```
+
+```HCL
+data "aws_subnet" "pubs" {
+  count             = "${length(data.terraform_remote_state.rds.mysql_azs)}"
+  vpc_id            = "${data.aws_vpc.vpc.id}"
+  availability_zone = "${element(data.terraform_remote_state.rds.mysql_azs,count.index)}"
+
+  filter {
+    name   = "tag:Name"
+    values = ["${terraform.workspace}-pub"]
+  }
+}
+
+resource "aws_instance" "ope" {
+  count                  = "${length(data.terraform_remote_state.rds.mysql_azs)}"
+  ami                    = "${data.aws_ami.amz2.id}"
+  instance_type          = "${element(local.ec2_instance_tyeps,count.index)}"
+  key_name               = "${data.terraform_remote_state.base.key_pair}"
+  subnet_id              = "${data.aws_subnet.pubs.*.id[count.index]}"
+  vpc_security_group_ids = ["${data.aws_security_group.sec.id}"]
+  iam_instance_profile   = "${aws_iam_instance_profile.ec2.name}"
+  user_data_base64       = "${base64encode(data.template_file.user_data_ec2.*.rendered[count.index])}"
+  monitoring             = true
+  tags                   = "${merge(local.tags, map("Name", "${terraform.workspace}-ope"))}"
 }
 ```
