@@ -195,7 +195,7 @@ ec2
 - ec2
 
 ### ec2 instance
-rdsから各db_instanceのazを受け取ってdb_instanceと同じazのpublic subnetにdata set投入用ec2を立てる
+rdsから各db_instanceのazを受け取ってdb_instanceと同じazのpublic subnetに同数のdata set投入用ec2を立てる
 ```HCL
 output "mysql_azs" {
   value = [
