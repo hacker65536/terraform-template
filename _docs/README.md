@@ -537,7 +537,7 @@ EOF
 
 #### parameter list
 
-```
+```bash
 mkdir docker
 cat <<'EOF' > docker/Dockerfile
 From mysql:8
