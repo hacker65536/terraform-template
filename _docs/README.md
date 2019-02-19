@@ -107,8 +107,10 @@ resource "aws_db_instance" "mysql80" {
     }"
 }
 ```
+### paramater
 
-
+- 大量にqueryを実行するために`max_prepqred_stmt_count`をmaxに設定。
+- slow logをcloudwatchに出力するための設定
 ```HCL
 resource "aws_db_parameter_group" "mysql80" {
   name   = "${terraform.workspace}-mysql80-parameter-group"
