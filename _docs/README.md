@@ -17,6 +17,18 @@ base
 
 ### subnet
 
+nat 環境は選択可
+```HCL
+resource "aws_subnet" "pri_nat" {
+  count                   = "${var.nat == 0 ? 0 : local.multi_azs}"
+  vpc_id                  = "${aws_vpc.vpc.id}"
+  cidr_block              = "${cidrsubnet(aws_vpc.vpc.cidr_block,8,count.index + local.multi_azs * 3)}"
+  availability_zone       = "${data.aws_availability_zones.azs.names[count.index % local.multi_azs]}"
+  map_public_ip_on_launch = false
+
+  tags = "${merge(local.tags, map("Name", "${terraform.workspace}-pri-nat","SubnetRole","pri_nat"))}"
+}
+```
 data resourceでフィルターして利用できるようにsubnet毎の役割をタグ `tag:SubnetRole`をつける
 ```HCL
 resource "aws_subnet" "pri" {
