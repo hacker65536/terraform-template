@@ -671,10 +671,11 @@ resource "aws_spot_fleet_request" "cheap_compute" {
 
     tags = "${merge(
       local.tags,
-      map("Name", "${terraform.workspace}-ec2node-sf",
-      "groupName","${terraform.workspace}-sf-${count.index / local.azs}"
-      )
-      )}"
+        map(
+          "Name", "${terraform.workspace}-ec2node-sf",
+          "groupName","${terraform.workspace}-sf-${count.index / local.azs}"
+        )
+    )}"
   }
 }
 ```
