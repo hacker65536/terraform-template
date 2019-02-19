@@ -9,7 +9,7 @@ terraform director
 base
 --
 - vpc
-- subunet (public , private)
+- subnet (public , private)
 - subnet (public(natgw) , private(nat)) (option)
 - route table /associate
 - security group
