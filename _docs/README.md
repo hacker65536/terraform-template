@@ -683,7 +683,17 @@ resource "aws_spot_fleet_request" "cheap_compute" {
 - sysbenchのコマンドをruncommandを利用して一斉制御を行う
 - sysbenchの出力をcloudwatchlogsに出力をする
 - sysbenchの実行コマンドをssm documentを利用してwrap
+```HCL
+data "template_file" "ssmdoc" {
+  template = "${file("ssmdoc.json")}"
+}
 
+resource "aws_ssm_document" "ssmdoc" {
+  name          = "${terraform.workspace}-sysbench"
+  document_type = "Command"
+  content       = "${data.template_file.ssmdoc.rendered}"
+}
+```
 ```json
 {
   "schemaVersion": "2.2",
