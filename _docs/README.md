@@ -239,7 +239,7 @@ resource "aws_instance" "ope" {
 
 ### user_data
 
-- install sysbench
+#### install sysbench
 ```bash
 #!/bin/bash
 
@@ -266,7 +266,7 @@ sudo yum -y install https://dev.mysql.com/get/mysql80-community-release-el7-1.no
 sudo yum -y install mysql
 ```
 
-- script
+#### script
 
 config
 ```bash
@@ -361,7 +361,7 @@ mysql -h $1 -usbtest --password=${password} sbtest -e 'show tables' 2>/dev/null
 mysql -h $1 -usbtest --password=${password} sbtest -e 'show create table sbtest1' 2>/dev/null
 EOF
 ```
-- sysbench test json output(lua)
+#### sysbench test json output(lua)
 
 read_only
 ```bash
