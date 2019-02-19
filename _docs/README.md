@@ -97,7 +97,7 @@ rds
 - rds_cluster
 - rds_cluster_instance
 - rds_cluster_parameter_group
-
+- db_subnet_group
 ### db_instance
 
 - `enabled_cloudwatch_logs_exports` に`error`,`general`,`slowquery`を設定
