@@ -12,7 +12,7 @@ locals {
 
 resource "aws_default_route_table" "def" {
   default_route_table_id = "${aws_vpc.vpc.default_route_table_id}"
-  tags                   = "${merge(local.tags, map("Name", "defrtbl"))}"
+  tags                   = "${merge(local.tags, map("Name", "def_rtbl"))}"
 }
 
 resource "aws_route_table" "pub" {
@@ -28,11 +28,13 @@ resource "aws_route" "pub" {
 }
 
 resource "aws_route_table" "pub_nat" {
+  count  = "${var.nat == 0 ? 0 : 1}"
   tags   = "${merge(local.tags, map("Name", "pub_natrtbl"))}"
   vpc_id = "${aws_vpc.vpc.id}"
 }
 
 resource "aws_route" "pub_nat" {
+  count                  = "${var.nat == 0 ? 0 : 1}"
   route_table_id         = "${aws_route_table.pub_nat.id}"
   destination_cidr_block = "0.0.0.0/0"
   gateway_id             = "${aws_internet_gateway.igw.id}"
@@ -48,6 +50,7 @@ resource "aws_route" "pub_nat2" {
 }
 
 resource "aws_route_table" "pri_nat" {
+  count  = "${var.nat == 0 ? 0 : 1}"
   tags   = "${merge(local.tags, map("Name", "pri_natrtbl"))}"
   vpc_id = "${aws_vpc.vpc.id}"
 }
