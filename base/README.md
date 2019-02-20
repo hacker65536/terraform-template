@@ -1,3 +1,3 @@
 ## 
 
-![](./vpc_with_nat.png)
+![](../_doc/vpc_with_nat.png)
