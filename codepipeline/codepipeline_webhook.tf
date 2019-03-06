@@ -32,10 +32,9 @@ resource "github_repository_webhook" "codepipeline" {
 
   configuration {
     url          = "${aws_codepipeline_webhook.codepipeline.url}"
-    content_type = "form"
-
-    insecure_ssl = false
     secret       = "${local.webhook_secret}"
+    content_type = "form"
+    insecure_ssl = false
   }
 
   events = ["push"]

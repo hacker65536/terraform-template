@@ -1,12 +1,12 @@
 locals {
   # checkip.amazonaws.com
   checkip = [
-    "52.204.60.216/32",
     "52.202.139.131/32",
+    "34.196.82.108/32",
+    "52.0.208.170/32",
+    "52.200.125.74/32",
     "34.233.102.38/32",
-    "34.192.84.239/32",
-    "107.23.175.217/32",
-    "52.1.46.34/32",
+    "18.233.42.138/32",
   ]
 }
 
@@ -41,7 +41,8 @@ resource "aws_route" "pub_nat" {
   depends_on             = ["aws_route_table.pub_nat"]
 }
 
-resource "aws_route" "pub_nat2" {
+//specific route
+resource "aws_route" "pub2nat" {
   count                  = "${var.nat == 0 ? 0 : length(local.checkip)}"
   route_table_id         = "${aws_route_table.pub_nat.id}"
   destination_cidr_block = "${element(local.checkip,count.index)}"

@@ -69,9 +69,8 @@ data "aws_iam_policy_document" "codebuild" {
       "arn:aws:logs:${data.aws_region.region.name}:${data.aws_caller_identity.caller_id.account_id}:log-group:/aws/codebuild/${aws_codebuild_project.codebuild.name}:log-stream:*",
     ]
 
+    //"${aws_cloudwatch_log_group.codebuildlogs.arn}:log-stream:*",
     //"arn:aws:logs:${data.aws_region.region.name}:${data.aws_caller_identity.caller_id.account_id}:log-group:/aws/codebuild/${aws_codebuild_project.codebuild.name}",
-
-    //"arn:aws:logs:::log-group:/aws/codebuild/${terraform.workspace}-codebuild:log-stream:*",
   }
 
   statement {
@@ -83,7 +82,6 @@ data "aws_iam_policy_document" "codebuild" {
 
     resources = [
       "${aws_s3_bucket.codebuild.arn}/*",
-      "${aws_s3_bucket.codepipeline.arn}/*",
     ]
   }
 
@@ -106,10 +104,6 @@ data "aws_iam_policy_document" "codebuild" {
       "ecr:InitiateLayerUpload",
       "ecr:UploadLayerPart",
       "ecr:CompleteLayerUpload",
-      "ecr:PutImage",
-
-      // for [error parsing HTTP 403 response body: unexpected end of JSON input: ""]
-      "ecr:BatchCheckLayerAvailability",
     ]
 
     resources = [
