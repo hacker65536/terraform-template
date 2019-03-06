@@ -34,8 +34,16 @@ $ terraform plan
 $ terraform apply
 $ cd ..
 ```
+## load from existed state
 
-
+```console
+$ prefix=<workspace_prefix>
+$ cd backend
+$ terraform workspace new $prefix
+$ terraform init
+$ terraform import aws_s3_bucket.state ${prefix}-state
+$ terraform import aws_dynamodb_table.dynamo ${prefix}-state-locking
+```
 ## second setup base 
 
 init base
