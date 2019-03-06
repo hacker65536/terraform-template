@@ -1,0 +1,15 @@
+variable "github_token" {
+  default = ""
+}
+
+variable "github_organization" {
+  default = ""
+}
+
+variable "github_repo" {
+  default = ""
+}
+
+variable "github_branch" {
+  default = "master"
+}

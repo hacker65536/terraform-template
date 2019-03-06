@@ -1,8 +1,10 @@
-#variable "github_token" {}
-#variable "github_organization" {}
+variable "github_token" {}
+variable "github_organization" {}
+variable "github_repo" {}
+variable "github_branch" {}
 
 provider "github" {
-  token        = "${local.github_token}"
-  organization = "${local.github_organization}"
+  token        = "${var.github_token}"
+  organization = "${var.github_organization}"
   version      = "~> 1.3.0"
 }
