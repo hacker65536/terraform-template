@@ -35,8 +35,8 @@ mkdir -p "$dir"
 
 
 workspace=$(cd $backenddir || exit ; terraform workspace show 2>/dev/null)
-bucket=$(cd $backenddir || exit ;terraform output bucket 2>/dev/null)
-dynamodb_table=$(cd $backenddir || exit ;terraform output dynamodb_table 2>/dev/null)
+bucket=$(cd $backenddir || exit ;terraform state show aws_s3_bucket.state | grep -E "\<id\>\s+=" | cut -d "="  -f2- | tr -d [:space:] 2>/dev/null)
+dynamodb_table=$(cd $backenddir || exit ;terraform state show aws_dynamodb_table.dynamo |  grep -E "\<id\>\s+=" | cut -d"="  -f2- |tr -d [:space:] 2>/dev/null)
 
 
 #if [[ "$bucket" == "" || $workspace == "default" || $workspace == "" ]];then
