@@ -1,7 +1,7 @@
 data "github_repository" "repo" {
   //full_name = "${lookup(local.source_config,"Owner")}/${lookup(local.source_config,"Repo")}"
 
-  name = "${lookup(local.source_config,"Repo")}"
+  name = "${local.github_repo}"
 }
 
 locals {

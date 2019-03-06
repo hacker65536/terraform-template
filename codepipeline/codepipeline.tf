@@ -23,7 +23,12 @@ resource "aws_codepipeline" "codepipeline" {
       version          = "1"
       output_artifacts = ["test"]
 
-      configuration = "${local.source_config}"
+      configuration = {
+        Owner      = "${local.github_organization}"
+        Repo       = "${local.github_repo}"
+        Branch     = "${local.github_branch}"
+        OAuthToken = "${local.github_token}"
+      }
     }
   }
 
