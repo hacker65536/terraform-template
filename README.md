@@ -77,7 +77,7 @@ $ sed -e "s/192.168.1.1/$(curl -Ss checkip.amazonaws.com)/" -i var_secips_overri
 
 
 ```console
-$ terraform paln
+$ terraform plan
 $ terraform apply
 ```
 
