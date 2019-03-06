@@ -1,5 +1,5 @@
 data "github_repository" "repo" {
-  //name      = "${lookup(local.source_config,"Repo")}"  //full_name = "techadmin/${lookup(local.source_config,"Repo")}"  //full_name = "hacker65536/ci_test"  //name = "ci_test"
+  name = "${var.github_repo}"
 }
 
 locals {

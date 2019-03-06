@@ -1,9 +1,7 @@
 locals {
   source {
-    type = "GITHUB"
-
-    //    location        = "https://github.com/hacker65536/ci_test.git"
-    location        = "https://github.com/--/amibfix-role.git"
+    type            = "GITHUB"
+    location        = "https://github.com/${var.github_organization}/${var.github_repo}.git"
     git_clone_depth = 1
   }
 }
