@@ -1,0 +1,1 @@
+../_common/data_ami_amazonlinux2.tf

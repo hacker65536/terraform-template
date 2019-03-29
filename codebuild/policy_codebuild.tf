@@ -66,7 +66,8 @@ data "aws_iam_policy_document" "codebuild" {
     ]
 
     resources = [
-      "arn:aws:logs:${data.aws_region.region.name}:${data.aws_caller_identity.caller_id.account_id}:log-group:/aws/codebuild/${aws_codebuild_project.codebuild.name}:log-stream:*",
+      //"arn:aws:logs:${data.aws_region.region.name}:${data.aws_caller_identity.caller_id.account_id}:log-group:/aws/codebuild/${aws_codebuild_project.codebuild.name}:log-stream:*",
+      "arn:aws:logs:${data.aws_region.region.name}:${data.aws_caller_identity.caller_id.account_id}:log-group:/aws/codebuild/*:log-stream:*",
     ]
 
     //"${aws_cloudwatch_log_group.codebuildlogs.arn}:log-stream:*",
@@ -89,25 +90,12 @@ data "aws_iam_policy_document" "codebuild" {
     sid = "ecr1"
 
     actions = [
-      "ecr:GetAuthorizationToken",
+      "ecr:BatchGetImage",
+      "ecr:GetDownloadUrlForLayer",
     ]
 
     resources = [
       "*",
-    ]
-  }
-
-  statement {
-    sid = "ecr2"
-
-    actions = [
-      "ecr:InitiateLayerUpload",
-      "ecr:UploadLayerPart",
-      "ecr:CompleteLayerUpload",
-    ]
-
-    resources = [
-      "${data.aws_ecr_repository.ecr.arn}",
     ]
   }
 

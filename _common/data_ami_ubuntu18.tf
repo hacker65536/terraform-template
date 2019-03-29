@@ -1,9 +1,9 @@
-data "aws_ami" "amz2" {
+data "aws_ami" "ubuntu18" {
   most_recent = true
 
   filter {
-    name   = "name"
-    values = ["amzn2-ami-hvm-2.0.2018*x86_64-gp2"]
+    name   = "manifest-location"
+    values = ["099720109477/ubuntu/images/hvm-ssd/ubuntu-bionic*"]
   }
 
   filter {
@@ -16,5 +16,5 @@ data "aws_ami" "amz2" {
     values = ["gp2"]
   }
 
-  owners = ["amazon"]
+  owners = ["099720109477"]
 }

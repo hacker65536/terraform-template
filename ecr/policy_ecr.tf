@@ -5,6 +5,7 @@ data "aws_iam_policy_document" "ecr" {
     actions = [
       "ecr:BatchGetImage",
       "ecr:GetDownloadForLayer",
+      "ecr:BatchCheckLayerAvailability",
     ]
 
     principals {
