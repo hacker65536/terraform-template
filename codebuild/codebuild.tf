@@ -77,14 +77,24 @@ resource "aws_codebuild_project" "codebuild" {
     }
 
     environment_variable {
-      "name"  = "KEY_PAIR_NAME"
+      "name"  = "KEY_PAIR"
       "type"  = "PARAMETER_STORE"
       "value" = "${aws_ssm_parameter.secret.name}"
     }
 
     environment_variable {
+      "name"  = "KEY_PAIR_NAME"
+      "value" = "${aws_key_pair.key.key_name}"
+    }
+
+    environment_variable {
       "name"  = "SECURITY_GROUP_ID"
       "value" = "${data.aws_security_group.sec.id}"
+    }
+
+    environment_variable {
+      "name"  = "PLATFORM"
+      "value" = "${element(local.platform_keys,count.index)}"
     }
 
     environment_variable {
@@ -95,6 +105,16 @@ resource "aws_codebuild_project" "codebuild" {
     environment_variable {
       "name"  = "SSH_USERNAME"
       "value" = "${lookup(local.ssh_username,element(local.platform_keys,count.index))}"
+    }
+
+    environment_variable {
+      "name"  = "AMI_USERS"
+      "value" = "054657590879"
+    }
+
+    environment_variable {
+      "name"  = "AMI_REGIONS"
+      "value" = "us-east-2"
     }
 
     /*
